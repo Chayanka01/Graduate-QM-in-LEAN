@@ -1,0 +1,6 @@
+# Applies to this trusted project in new sessions; runtime/account limits still win.
+[agents]
+enabled = true
+max_concurrent_threads_per_session = 20
+default_subagent_model = "gpt-6-astra"
+default_subagent_reasoning_effort = "medium"

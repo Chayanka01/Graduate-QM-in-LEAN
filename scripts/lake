@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+set -euo pipefail
+source "$(dirname -- "${BASH_SOURCE[0]}")/env.sh"
+if [[ ! -x "$ELAN_HOME/bin/lake" ]]; then
+  echo 'Local Lean is missing. Run python3 scripts/bootstrap.py first.' >&2
+  exit 1
+fi
+exec "$ELAN_HOME/bin/lake" "$@"

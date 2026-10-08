@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+set -euo pipefail
+source "$(dirname -- "${BASH_SOURCE[0]}")/env.sh"
+python3 scripts/check_infrastructure.py
+./scripts/lake build GraduateQM
+mkdir -p .state
+probe="$(mktemp "$QM_ROOT/.state/axioms-XXXXXX")"
+trap 'rm -f "$probe"' EXIT
+cat > "$probe" <<'LEAN'
+import GraduateQM
+#print axioms GraduateQM.Infrastructure.real_square_nonnegative
+LEAN
+./scripts/lake env lean "$probe" | tee .state/axiom-audit.txt
+python3 - <<'PY'
+from pathlib import Path
+import re
+text = Path('.state/axiom-audit.txt').read_text()
+match = re.search(r"depends on axioms:\s*\[([^\]]*)\]", text, re.S)
+if match:
+    found = {a.strip() for a in match[1].split(',') if a.strip()}
+    unexpected = found - {'propext', 'Classical.choice', 'Quot.sound'}
+    if unexpected:
+        raise SystemExit(f'Unexpected axioms: {sorted(unexpected)}')
+elif 'does not depend on any axioms' not in text:
+    raise SystemExit('No recognizable exact-export axiom report')
+print('Infrastructure smoke export passed its axiom audit. No QM theorem is claimed.')
+PY

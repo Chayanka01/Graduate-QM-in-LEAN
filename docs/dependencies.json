@@ -1,0 +1,16 @@
+{
+  "checked_on": "2026-10-09",
+  "lean": "leanprover/lean4:v4.34.1",
+  "elan": "v4.2.4",
+  "mathlib": {
+    "release": "v4.34.1",
+    "commit": "d13f23b723b8a846827a245b89c10fc7d3f11612"
+  },
+  "skills": {
+    "repository": "https://github.com/scottnarmstrong/LeanAutoformalizationSkills",
+    "commit": "05a07311f16bc581729e52f3e73647b95fa9bef1",
+    "snapshot": "vendor/LeanAutoformalizationSkills",
+    "count": 12,
+    "license": "CC-BY-4.0; see the snapshot's LICENSES and THIRD_PARTY_NOTICES.md"
+  }
+}
