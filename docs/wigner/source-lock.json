@@ -1,0 +1,17 @@
+{
+  "primary_source": {
+    "title": "Two elementary proofs of the Wigner theorem on symmetry in quantum mechanics",
+    "revision": "arXiv:0808.0779v2, 21 August 2008",
+    "url": "https://arxiv.org/pdf/0808.0779v2",
+    "pdf_sha256": "59903556c2d3ec56528ded0dcb0c98e9daaa76cd87843d999e21822fec494228",
+    "pdf_bytes": 172646,
+    "local_artifact": ".state/wigner-simon-0808.0779v2.pdf",
+    "scope": "Section II statement and Section III direct proof; Section V excluded"
+  },
+  "transcription": {
+    "path": "docs/wigner/PROOF_SOURCE.md",
+    "version": "1",
+    "sha256": "8329924b00f9594ab4658c1fbfc9523e00704411a0282a31aaf78caf4f2f7632",
+    "kind": "original project mathematical transcription and explicit expansions, not full-paper reproduction"
+  }
+}

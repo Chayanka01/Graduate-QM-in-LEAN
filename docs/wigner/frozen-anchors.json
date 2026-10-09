@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "manifest_state": "AUTHOR_APPROVED",
+  "seal_limits": {
+    "max_body_lines": 3,
+    "max_body_bytes": 240
+  },
+  "anchors": [
+    {
+      "id": "wigner_exists_unitary_or_antiunitary_v1",
+      "kind": "theorem",
+      "author_approval": {
+        "approved_by": "project author",
+        "approved_at": "2026-10-09",
+        "approval_ref": "docs/wigner/APPROVAL.md",
+        "approval_version": "1"
+      },
+      "source": {
+        "revision": "arXiv:0808.0779v2 (21 August 2008); finite-dimensional specialization and zero-dimensional convention approved 2026-10-09; PDF sha256:59903556c2d3ec56528ded0dcb0c98e9daaa76cd87843d999e21822fec494228",
+        "range": "Section II, printed p. 2, equations (2.1)-(2.4), (2.8), text following (2.14); docs/wigner/APPROVAL.md"
+      },
+      "contract": {
+        "id": "wigner.classical.finite",
+        "version": "1"
+      },
+      "path": "GraduateQM/Wigner/Frozen/ExistsUnitaryOrAntiunitary.lean",
+      "export": "GraduateQM.Wigner.exists_unitary_or_antiunitary",
+      "implementation": {
+        "module": "GraduateQM.Wigner.Provider",
+        "export": "GraduateQM.Wigner.Provider.exists_unitary_or_antiunitary"
+      },
+      "split_policy": {
+        "source_group": "wigner.classical.finite",
+        "mode": "NOT_SPLIT",
+        "ruling_ref": "docs/wigner/APPROVAL.md"
+      },
+      "abi_sha256": "393a6d05da209da8453b5fcc43a3972c578d3ea4c031b2843b86c79929dd5727",
+      "definition_closure": [],
+      "state": "SEALED",
+      "prefix_sha256": "95fdab26e69e359d221b95dc5dc44908326ff85c21e230a2bfa3b6d61fe6b4e5",
+      "suffix_sha256": "2d8a36cbcd95a30d76492d0d647263e062399449f093949160c5651e63ec554d",
+      "draft_allowlist": {
+        "frozen_paths": [],
+        "audit_paths": []
+      }
+    }
+  ]
+}

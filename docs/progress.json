@@ -1,10 +1,12 @@
 {
-  "phase": "wigner_statement_design",
+  "phase": "wigner_formalization_complete",
   "first_physics_problem": "Finite-dimensional Wigner theorem",
   "research_results": [],
-  "approved_anchors": [],
+  "approved_anchors": [
+    "wigner_exists_unitary_or_antiunitary_v1"
+  ],
   "draft_anchors": [],
-  "status": "exact_target_review_prepared",
+  "status": "proved_public_release",
   "verification": {
     "date": "2026-10-09",
     "lean_build": "passed",
@@ -18,15 +20,142 @@
     "lead_runtime_total_slots": 21,
     "lead_runtime_worker_ceiling": 20,
     "twenty_worker_load_test": "not performed",
-    "scope": "infrastructure only; no QM theorem attempted"
+    "scope": "bootstrap smoke validation only; Wigner evidence is recorded under wigner_campaign"
   },
   "wigner_intake": {
     "main_statement": "classical bijective ray symmetry, arbitrary finite complex dimension",
     "target_type_elaboration": "passed; independently repeated by orchestrator",
     "preapproval_semantic_review": "no excess assumptions or weakened conclusion reported",
-    "theorem_proof": "not attempted",
-    "author_approval": "pending exact declaration review",
-    "frozen_anchors": 0
+    "theorem_proof": "PROVED; only approved proof body changed; exact statement and elaborated type unchanged",
+    "author_approval": "approved exact marked declaration on 2026-10-09",
+    "frozen_anchors": 1
   },
-  "publication_status": "local_changes_only; post-bootstrap publication requires explicit authorization"
+  "publication_status": {
+    "setup": "published by orchestrator at 0f4a0f30b90c3e417e6f1d651ee9a49fcc2e4ecf",
+    "campaign": "completed proof and audits included in this public release"
+  },
+  "wigner_campaign": {
+    "draft_guard": "passed; root SEALED, zero draft anchors and zero unregistered placeholders",
+    "negative_guard_tests": 17,
+    "frozen_named_declaration_build": "passed sealed export, warning-free",
+    "independent_statement_audit": "FINAL_AUDIT.md PASS: exact source, full binder/carrier audit, proof-only seal, all conditional obligations consumed, standard axiom closure",
+    "source_graph": "independent slice and fresh global review PASS; strict linter and dashboard check PASS",
+    "source_graph_counts": {
+      "nodes": 28,
+      "edges": 70,
+      "coverage_items": 24,
+      "source_gaps": 6,
+      "external_leaves": 5
+    },
+    "active_packets": [],
+    "audited_internal_helpers": [
+      "GraduateQM.Wigner.probability_smul_smul",
+      "GraduateQM.Wigner.probability_eq_zero_iff",
+      "GraduateQM.Wigner.image_inner_eq_zero",
+      "GraduateQM.Wigner.isEmpty_projectivization_of_finrank_eq_zero",
+      "GraduateQM.Wigner.subsingleton_projectivization_of_finrank_le_one",
+      "GraduateQM.Wigner.eq_projectivization_map_refl_of_finrank_le_one",
+      "GraduateQM.Wigner.exists_unitary_of_finrank_le_one"
+    ],
+    "helper_audit": "docs/wigner/HELPER_AUDIT.md",
+    "helper_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "helper_status": "compiled and independently audited internal helpers; no frozen/source-node PROVED promotion",
+    "remaining_scope": "None for the approved finite-dimensional existence theorem. Uniqueness, branch exclusivity, infinite dimension and symmetry-group phase coherence are outside scope.",
+    "full_integration_check": "./scripts/check passed:26 modules;17 negative guard tests; default GraduateQM build includes sealed Wigner; both named export axiom audits passed",
+    "step1_build": "./scripts/lake build GraduateQM.Wigner.BasisNormalization passed without warnings",
+    "step1_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "step1_audit": "docs/wigner/STEP1_AUDIT.md; PASS combined internal producer; conditional helper premises consumed internally",
+    "step1_exports": [
+      "GraduateQM.Wigner.exists_unit_representative",
+      "GraduateQM.Wigner.probability_eq_of_mk_eq",
+      "GraduateQM.Wigner.mk_eq_mk_iff_exists_unit_phase",
+      "GraduateQM.Wigner.probability_eq_norm_inner_sq",
+      "GraduateQM.Wigner.projectivization_map_symm_apply",
+      "GraduateQM.Wigner.projectivization_map_bijective",
+      "GraduateQM.Wigner.probability_unitary",
+      "GraduateQM.Wigner.probability_preserving_unitary_postcomp",
+      "GraduateQM.Wigner.exists_image_orthonormalBasis",
+      "GraduateQM.Wigner.coordinate_norm_sq_eq_of_fixed_basis",
+      "GraduateQM.Wigner.coordinate_norm_eq_of_fixed_basis",
+      "GraduateQM.Wigner.coordinate_eq_zero_iff_of_fixed_basis",
+      "GraduateQM.Wigner.coordinate_support_eq_of_fixed_basis",
+      "GraduateQM.Wigner.exists_basis_unitary_normalization"
+    ],
+    "step2_audit": "docs/wigner/STEP2_AUDIT.md; PASS actual unique parameter, global circle branch per pair and Step1 consumption",
+    "step2_exports": [
+      "GraduateQM.Wigner.inner_pair_left",
+      "GraduateQM.Wigner.inner_pair_right",
+      "GraduateQM.Wigner.pair_ne_zero",
+      "GraduateQM.Wigner.pair_norm_sq",
+      "GraduateQM.Wigner.inner_pair_pair",
+      "GraduateQM.Wigner.pair_probability",
+      "GraduateQM.Wigner.pair_mk_eq_iff",
+      "GraduateQM.Wigner.exists_circle_mul_or_mul_inv_of_preserving_re",
+      "GraduateQM.Wigner.exists_unique_pair_circle_image",
+      "GraduateQM.Wigner.exists_pair_circle_mul_or_mul_inv",
+      "GraduateQM.Wigner.exists_basis_unitary_pair_circle_normalization"
+    ],
+    "steps34_audit": "docs/wigner/STEPS34_AUDIT.md; PASS original-input producer and arbitrary-state pair-product consumption; one common pair orientation still open",
+    "steps34_build": "./scripts/lake build GraduateQM.Wigner.ZeroOffsetNormalization passed warning-free",
+    "steps34_exports": [
+      "GraduateQM.Wigner.exists_diagonal_unitary",
+      "GraduateQM.Wigner.diagonal_unitary_apply",
+      "GraduateQM.Wigner.diagonal_unitary_map_basis_ray",
+      "GraduateQM.Wigner.exists_positive_unit_vector",
+      "GraduateQM.Wigner.exists_reference_unitary_normalization",
+      "GraduateQM.Wigner.coordinate_product_of_pair_rotation",
+      "GraduateQM.Wigner.coordinate_product_of_pair_reflection",
+      "GraduateQM.Wigner.mk_eq_of_reference_products",
+      "GraduateQM.Wigner.pair_action_without_offsets",
+      "GraduateQM.Wigner.exists_zero_offset_unitary_normalization",
+      "GraduateQM.Wigner.exists_basis_zero_offset_normalization"
+    ],
+    "steps34_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "initial_statement_audit": "DECLARATION_FIDELITY PASS; DRAFT_ALLOWLIST PASS; FROZEN_UNPROVED",
+    "final_audit": "docs/wigner/FINAL_AUDIT.md",
+    "final_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "final_validation_scope": "Lead execution and independent source audit; separate orchestrator integration and sealed-source proof-term/axiom verification; successful fresh-checkout bootstrap on macOS arm64 with public dependency downloads and no inherited local tooling or build artifacts",
+    "frozen_final_sha256": "6b557eb1096e9305b067e06a389b903282b1f7d7feee1a1eb0a1e60d9ac8a96d",
+    "approved_abi_sha256": "393a6d05da209da8453b5fcc43a3972c578d3ea4c031b2843b86c79929dd5727",
+    "final_exports": [
+      "GraduateQM.Wigner.exists_coordinate_conjugation",
+      "GraduateQM.Wigner.signs_uniform_of_coordinate_lifts",
+      "GraduateQM.Wigner.coordinate_products_global_branch",
+      "GraduateQM.Wigner.eq_id_of_coordinate_products",
+      "GraduateQM.Wigner.eq_map_of_conjugated_coordinate_products",
+      "GraduateQM.Wigner.exists_antiunitary_of_conjugated_coordinate_products",
+      "GraduateQM.Wigner.Provider.exists_unitary_or_antiunitary",
+      "GraduateQM.Wigner.exists_unitary_or_antiunitary"
+    ],
+    "source_graph_lifecycle": "source-only snapshot; original Lean planning fields retained; six source omissions explicitly filled by implementation and final audit; sealed-manifest hash rebinding independently reviewed",
+    "orchestrator_verification": "docs/wigner/ORCHESTRATOR_VERIFICATION.md; independently reran integration checks and exact sealed-source re-elaboration; proof-only change and standard axiom closure verified",
+    "release_verification": "docs/wigner/RELEASE.md; fresh bootstrap, 26 project modules, 17 guard regressions, and both named export axiom audits passed on 2026-10-09"
+  },
+  "proved_anchors": [
+    "wigner_exists_unitary_or_antiunitary_v1"
+  ],
+  "formalized_results": [
+    {
+      "theorem": "GraduateQM.Wigner.exists_unitary_or_antiunitary",
+      "status": "PROVED",
+      "scope": "Classical bijective Wigner theorem for arbitrary finite-dimensional complex inner-product spaces, including dimension zero; one global unitary or antiunitary implements every ray",
+      "publication": "included in this public release"
+    }
+  ]
 }

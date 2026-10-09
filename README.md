@@ -1,9 +1,31 @@
 # Graduate QM in Lean
 
 An experimental graduate quantum mechanics learning project with AI-assisted,
-kernel-checked Lean proofs. The infrastructure is verified. The first selected project is **Wigner's theorem
-in finite-dimensional quantum mechanics**, currently at source and statement
-review. No Wigner theorem is claimed proved.
+kernel-checked Lean proofs. **The approved finite-dimensional Wigner theorem is
+proved and independently audited.** Every bijection of complex pure-state rays
+preserving all Born transition probabilities is induced by one global unitary
+or antiunitary equivalence. The proof includes dimensions zero and one, handles
+states with zero coordinates, and uses only standard Lean axioms. The argument
+follows the direct proof in Simon et al., arXiv:0808.0779v2, Section III, with
+the intermediate constructions made explicit. This is a formalization of a
+known theorem, using Mathlib's standard mathematical foundations.
+
+## Start here
+
+| Interest | Entry point |
+|---|---|
+| Physics and scope | [Project overview](docs/wigner/PROJECT.md) |
+| Exact formal statement | [Wigner theorem](GraduateQM/Wigner/Frozen/ExistsUnitaryOrAntiunitary.lean) |
+| How the proof works | [Mathematical outline](docs/wigner/PROOF_SOURCE.md) and [Lean modules](GraduateQM/Wigner/) |
+| How the result was checked | [Final source audit](docs/wigner/FINAL_AUDIT.md), [separate verification](docs/wigner/ORCHESTRATOR_VERIFICATION.md), and [release notes](docs/wigner/RELEASE.md) |
+| Current status | [Milestone ledger](docs/progress.json) |
+
+The intended textbook audience is physics graduate students learning the
+mathematical foundations. Physics and mathematical proofs will form the main
+text; Lean declarations and technical notes will be optional companion material.
+The chapter structure is being designed with the author. This release provides
+the verified proof library and its technical documentation; it is not yet a
+finished textbook chapter.
 
 ## Local setup
 
@@ -27,9 +49,9 @@ python3 scripts/bootstrap.py
 Use `./scripts/lake` and `./scripts/lean` for every project command. The wrappers
 select the local environment even if other Lean versions are installed.
 Bootstrap needs network access. Routine builds can reuse the downloaded cache.
-The smoke check imports real-analysis/inner-product-space infrastructure, builds
-this library, and checks the smoke theorem's exact axiom dependencies. It does
-not certify a future physics translation or audit every future declaration.
+The check builds this library, including the sealed Wigner export, and audits
+the exact axiom dependencies of both the infrastructure smoke theorem and
+Wigner's theorem. Source fidelity is assessed separately by independent review.
 
 ## Working with the agents
 
@@ -43,8 +65,15 @@ on the next turn/new chat. Agent roles and defaults are in `.codex/`. Existing
 sessions may retain their old limits. The desktop's effective runtime settings
 always take precedence over a requested ceiling.
 
-The active milestone is preparing the exact Wigner theorem statement and its
-independent semantic review. Read [the project scope](docs/wigner/PROJECT.md),
+The [exact Wigner declaration](GraduateQM/Wigner/Frozen/ExistsUnitaryOrAntiunitary.lean)
+was approved on 2026-10-09 and sealed by changing only its proof body. The
+[final audit](docs/wigner/FINAL_AUDIT.md) verifies source fidelity, all-state
+quantifiers, low-dimensional cases, actual dependency consumption, and the
+standard axioms `propext`, `Classical.choice`, and `Quot.sound`. Kernel checks
+were run by the lead, inspected by a fresh auditor, and rerun separately by the
+orchestrator. Fresh-checkout release validation is recorded in the
+[release notes](docs/wigner/RELEASE.md). Earlier milestone audits remain as historical
+evidence. Read [the project scope](docs/wigner/PROJECT.md),
 [the sources](docs/wigner/SOURCES.md), [the workflow](docs/WORKFLOW.md), and
 [agent rules](AGENTS.md).
 The pinned skill workflow requires independent statement review and explicit
@@ -62,5 +91,14 @@ remain with it. Hashes in `docs/skills-checksums.json` detect accidental edits.
 
 [Dependency pins](docs/dependencies.json) record versions;
 [the milestone ledger](docs/progress.json) records scope.
-Official [Codex subagent documentation](https://learn.chatgpt.com/docs/agent-configuration/subagents)
-describes the requested project settings.
+
+## License and verification records
+
+Project-owned code and documentation are licensed under [Apache-2.0](LICENSE),
+matching the existing source headers. Vendored skills retain their own licenses
+and notices; the project license does not replace them. Mathlib remains a
+separately licensed dependency. The cited papers are not redistributed here.
+
+Historical audit reports refer to private local `.state/` execution logs. Those
+logs and conversations are not distributed. Readers can run the shipped checks
+from a fresh checkout; see [release verification](docs/wigner/RELEASE.md).

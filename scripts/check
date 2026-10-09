@@ -2,6 +2,7 @@
 set -euo pipefail
 source "$(dirname -- "${BASH_SOURCE[0]}")/env.sh"
 python3 scripts/check_infrastructure.py
+python3 -m unittest discover -s tests -p test_campaign_guards.py
 ./scripts/lake build GraduateQM
 mkdir -p .state
 probe="$(mktemp "$QM_ROOT/.state/axioms-XXXXXX")"
@@ -9,19 +10,25 @@ trap 'rm -f "$probe"' EXIT
 cat > "$probe" <<'LEAN'
 import GraduateQM
 #print axioms GraduateQM.Infrastructure.real_square_nonnegative
+#print axioms GraduateQM.Wigner.exists_unitary_or_antiunitary
 LEAN
 ./scripts/lake env lean "$probe" | tee .state/axiom-audit.txt
 python3 - <<'PY'
 from pathlib import Path
 import re
 text = Path('.state/axiom-audit.txt').read_text()
-match = re.search(r"depends on axioms:\s*\[([^\]]*)\]", text, re.S)
-if match:
-    found = {a.strip() for a in match[1].split(',') if a.strip()}
-    unexpected = found - {'propext', 'Classical.choice', 'Quot.sound'}
-    if unexpected:
-        raise SystemExit(f'Unexpected axioms: {sorted(unexpected)}')
-elif 'does not depend on any axioms' not in text:
-    raise SystemExit('No recognizable exact-export axiom report')
-print('Infrastructure smoke export passed its axiom audit. No QM theorem is claimed.')
+exports = ['GraduateQM.Infrastructure.real_square_nonnegative',
+           'GraduateQM.Wigner.exists_unitary_or_antiunitary']
+for export in exports:
+    label = re.escape("'" + export + "'")
+    match = re.search(label + r" depends on axioms:\s*\[([^\]]*)\]", text, re.S)
+    if match:
+        found = {a.strip() for a in match[1].split(',') if a.strip()}
+        unexpected = found - {'propext', 'Classical.choice', 'Quot.sound'}
+        if unexpected:
+            raise SystemExit(f'{export}: unexpected axioms: {sorted(unexpected)}')
+    elif not re.search(label + r" does not depend on any axioms", text):
+        raise SystemExit(f'{export}: no recognizable exact-export axiom report')
+print('Infrastructure and sealed Wigner exports passed their axiom audits.')
+print('Source fidelity is recorded separately in docs/wigner/FINAL_AUDIT.md.')
 PY

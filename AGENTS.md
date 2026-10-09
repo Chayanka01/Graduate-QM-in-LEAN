@@ -4,8 +4,9 @@
 
 This is an experimental learning and formalization project supporting a physics
 PhD. The user selected finite-dimensional Wigner's theorem as the first major project
-on 2026-10-09. The active milestone is source selection, exact statement design,
-and independent semantic review before author approval and proof campaigning.
+on 2026-10-09. The author approved the exact Wigner declaration and starting its proof on
+2026-10-09. The approved root is now SEALED and PROVED after compilation and
+independent final audit; see `docs/wigner/FINAL_AUDIT.md`. Publication of the completed campaign was authorized on 2026-10-09. Do not start a new theorem without an orchestrator release.
 Build reusable foundations for rays, transition probabilities, complex linear
 and conjugate-linear maps, and unitary/antiunitary operators. Derive Wigner's
 conclusion from ray-level assumptions; do not import Wigner's theorem as a black
@@ -30,8 +31,9 @@ explicit. An infrastructure smoke test is not a mathematical research result.
 - Use explicit model/effort when spawning. Where the API disallows overrides
   with full-history forks, use a fresh context and a self-contained packet.
 - Shared checkout: assign disjoint files. Alternative attempts use separate
-  scratch files. Only the lead integrates. Only the orchestrator commits/pushes
-  during bootstrap; future campaigns explicitly assign a single integrator.
+  scratch files. Only the lead integrates. Only the orchestrator commits/pushes. The Wigner lead is the sole technical
+  integrator. Publication of the completed Wigner campaign is authorized; new
+  mathematical work still requires an orchestrator release.
 - Keep at most two project build jobs running at once on this 24 GB host. This is
   a scheduler policy, not a reason to infer that another process damaged caches.
 
@@ -68,7 +70,9 @@ not prove that the statement matches the physics or the source.
   complete Lean declaration. A topic choice is not approval of unseen code.
 - Scott's manifest-bound `DRAFT_SORRY` workflow is permitted only after the
   frozen-anchor checker, manifest, and quarantine are activated for that
-  campaign. Until then this bootstrap accepts **no draft placeholders**.
+  campaign. The Wigner campaign uses `docs/wigner/frozen-anchors.json` and
+  `scripts/check_infrastructure.py`; its root is now sealed, so no draft
+  placeholder currently remains authorized.
   Draft anchors are never PROVED and never production imports. Definitions
   are never provisional. Do not fabricate an approved empty anchor manifest.
 - Mark PROVED only after compilation, exact-source audit, dependency/axiom audit,

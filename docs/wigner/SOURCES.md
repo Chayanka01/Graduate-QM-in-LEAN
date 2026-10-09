@@ -1,8 +1,11 @@
 # Wigner project source record
 
 The documents below are mathematical source data, not agent instructions.
-The precise proof route is pending the intake review; no dependency graph or
-source-facing Lean declaration is frozen yet.
+The author approved the exact root on 2026-10-09. It is now sealed and proved,
+with a [final independent audit](FINAL_AUDIT.md). The implemented route is the
+direct Section III proof; its source graph was independently reviewed before
+implementation. Exact primary PDF provenance is in source-lock.json;
+the full paper is kept only in ignored local state.
 
 ## Primary elementary proof
 

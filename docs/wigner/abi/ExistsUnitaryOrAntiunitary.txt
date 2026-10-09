@@ -1,0 +1,386 @@
+∀ (E : Type u_1) [inst : NormedAddCommGroup.{u_1} E]
+  [inst_1 :
+    @InnerProductSpace.{0, u_1} Complex E Complex.instRCLike
+      (@NormedAddCommGroup.toSeminormedAddCommGroup.{u_1} E inst)]
+  [@FiniteDimensional.{0, u_1} Complex E (@Field.toDivisionRing.{0} Complex Complex.instField)
+      (@NormedAddCommGroup.toAddCommGroup.{u_1} E inst)
+      (@NormedSpace.toModule.{0, u_1} Complex E Complex.instNormedField
+        (@NormedAddCommGroup.toSeminormedAddCommGroup.{u_1} E inst)
+        (@InnerProductSpace.toNormedSpace.{0, u_1} Complex E Complex.instRCLike
+          (@NormedAddCommGroup.toSeminormedAddCommGroup.{u_1} E inst) inst_1))]
+  (f :
+    @Projectivization.{0, u_1} Complex E (@Field.toDivisionRing.{0} Complex Complex.instField)
+        (@NormedAddCommGroup.toAddCommGroup.{u_1} E inst)
+        (@NormedSpace.toModule.{0, u_1} Complex E Complex.instNormedField
+          (@NormedAddCommGroup.toSeminormedAddCommGroup.{u_1} E inst)
+          (@InnerProductSpace.toNormedSpace.{0, u_1} Complex E Complex.instRCLike
+            (@NormedAddCommGroup.toSeminormedAddCommGroup.{u_1} E inst) inst_1)) →
+      @Projectivization.{0, u_1} Complex E (@Field.toDivisionRing.{0} Complex Complex.instField)
+        (@NormedAddCommGroup.toAddCommGroup.{u_1} E inst)
+        (@NormedSpace.toModule.{0, u_1} Complex E Complex.instNormedField
+          (@NormedAddCommGroup.toSeminormedAddCommGroup.{u_1} E inst)
+          (@InnerProductSpace.toNormedSpace.{0, u_1} Complex E Complex.instRCLike
+            (@NormedAddCommGroup.toSeminormedAddCommGroup.{u_1} E inst) inst_1)))
+  (h_bijective :
+    @Function.Bijective.{u_1 + 1, u_1 + 1}
+      (@Projectivization.{0, u_1} Complex E (@Field.toDivisionRing.{0} Complex Complex.instField)
+        (@NormedAddCommGroup.toAddCommGroup.{u_1} E inst)
+        (@NormedSpace.toModule.{0, u_1} Complex E Complex.instNormedField
+          (@NormedAddCommGroup.toSeminormedAddCommGroup.{u_1} E inst)
+          (@InnerProductSpace.toNormedSpace.{0, u_1} Complex E Complex.instRCLike
+            (@NormedAddCommGroup.toSeminormedAddCommGroup.{u_1} E inst) inst_1)))
+      (@Projectivization.{0, u_1} Complex E (@Field.toDivisionRing.{0} Complex Complex.instField)
+        (@NormedAddCommGroup.toAddCommGroup.{u_1} E inst)
+        (@NormedSpace.toModule.{0, u_1} Complex E Complex.instNormedField
+          (@NormedAddCommGroup.toSeminormedAddCommGroup.{u_1} E inst)
+          (@InnerProductSpace.toNormedSpace.{0, u_1} Complex E Complex.instRCLike
+            (@NormedAddCommGroup.toSeminormedAddCommGroup.{u_1} E inst) inst_1)))
+      f)
+  (h_probability :
+    ∀ (x y x' y' : E)
+      (hx :
+        @Ne.{u_1 + 1} E x
+          (@OfNat.ofNat.{u_1} E (nat_lit 0)
+            (@Zero.toOfNat0.{u_1} E
+              (@NegZeroClass.toZero.{u_1} E
+                (@SubNegZeroMonoid.toNegZeroClass.{u_1} E
+                  (@SubtractionMonoid.toSubNegZeroMonoid.{u_1} E
+                    (@SubtractionCommMonoid.toSubtractionMonoid.{u_1} E
+                      (@AddCommGroup.toDivisionAddCommMonoid.{u_1} E
+                        (@NormedAddCommGroup.toAddCommGroup.{u_1} E inst)))))))))
+      (hy :
+        @Ne.{u_1 + 1} E y
+          (@OfNat.ofNat.{u_1} E (nat_lit 0)
+            (@Zero.toOfNat0.{u_1} E
+              (@NegZeroClass.toZero.{u_1} E
+                (@SubNegZeroMonoid.toNegZeroClass.{u_1} E
+                  (@SubtractionMonoid.toSubNegZeroMonoid.{u_1} E
+                    (@SubtractionCommMonoid.toSubtractionMonoid.{u_1} E
+                      (@AddCommGroup.toDivisionAddCommMonoid.{u_1} E
+                        (@NormedAddCommGroup.toAddCommGroup.{u_1} E inst)))))))))
+      (hx' :
+        @Ne.{u_1 + 1} E x'
+          (@OfNat.ofNat.{u_1} E (nat_lit 0)
+            (@Zero.toOfNat0.{u_1} E
+              (@NegZeroClass.toZero.{u_1} E
+                (@SubNegZeroMonoid.toNegZeroClass.{u_1} E
+                  (@SubtractionMonoid.toSubNegZeroMonoid.{u_1} E
+                    (@SubtractionCommMonoid.toSubtractionMonoid.{u_1} E
+                      (@AddCommGroup.toDivisionAddCommMonoid.{u_1} E
+                        (@NormedAddCommGroup.toAddCommGroup.{u_1} E inst)))))))))
+      (hy' :
+        @Ne.{u_1 + 1} E y'
+          (@OfNat.ofNat.{u_1} E (nat_lit 0)
+            (@Zero.toOfNat0.{u_1} E
+              (@NegZeroClass.toZero.{u_1} E
+                (@SubNegZeroMonoid.toNegZeroClass.{u_1} E
+                  (@SubtractionMonoid.toSubNegZeroMonoid.{u_1} E
+                    (@SubtractionCommMonoid.toSubtractionMonoid.{u_1} E
+                      (@AddCommGroup.toDivisionAddCommMonoid.{u_1} E
+                        (@NormedAddCommGroup.toAddCommGroup.{u_1} E inst))))))))),
+      @Eq.{u_1 + 1}
+          (@Projectivization.{0, u_1} Complex E (@Field.toDivisionRing.{0} Complex Complex.instField)
+            (@NormedAddCommGroup.toAddCommGroup.{u_1} E inst)
+            (@NormedSpace.toModule.{0, u_1} Complex E Complex.instNormedField
+              (@NormedAddCommGroup.toSeminormedAddCommGroup.{u_1} E inst)
+              (@InnerProductSpace.toNormedSpace.{0, u_1} Complex E Complex.instRCLike
+                (@NormedAddCommGroup.toSeminormedAddCommGroup.{u_1} E inst) inst_1)))
+          (f
+            (@Projectivization.mk.{0, u_1} Complex E (@Field.toDivisionRing.{0} Complex Complex.instField)
+              (@NormedAddCommGroup.toAddCommGroup.{u_1} E inst)
+              (@NormedSpace.toModule.{0, u_1} Complex E Complex.instNormedField
+                (@NormedAddCommGroup.toSeminormedAddCommGroup.{u_1} E inst)
+                (@InnerProductSpace.toNormedSpace.{0, u_1} Complex E Complex.instRCLike
+                  (@NormedAddCommGroup.toSeminormedAddCommGroup.{u_1} E inst) inst_1))
+              x hx))
+          (@Projectivization.mk.{0, u_1} Complex E (@Field.toDivisionRing.{0} Complex Complex.instField)
+            (@NormedAddCommGroup.toAddCommGroup.{u_1} E inst)
+            (@NormedSpace.toModule.{0, u_1} Complex E Complex.instNormedField
+              (@NormedAddCommGroup.toSeminormedAddCommGroup.{u_1} E inst)
+              (@InnerProductSpace.toNormedSpace.{0, u_1} Complex E Complex.instRCLike
+                (@NormedAddCommGroup.toSeminormedAddCommGroup.{u_1} E inst) inst_1))
+            x' hx') →
+        @Eq.{u_1 + 1}
+            (@Projectivization.{0, u_1} Complex E (@Field.toDivisionRing.{0} Complex Complex.instField)
+              (@NormedAddCommGroup.toAddCommGroup.{u_1} E inst)
+              (@NormedSpace.toModule.{0, u_1} Complex E Complex.instNormedField
+                (@NormedAddCommGroup.toSeminormedAddCommGroup.{u_1} E inst)
+                (@InnerProductSpace.toNormedSpace.{0, u_1} Complex E Complex.instRCLike
+                  (@NormedAddCommGroup.toSeminormedAddCommGroup.{u_1} E inst) inst_1)))
+            (f
+              (@Projectivization.mk.{0, u_1} Complex E (@Field.toDivisionRing.{0} Complex Complex.instField)
+                (@NormedAddCommGroup.toAddCommGroup.{u_1} E inst)
+                (@NormedSpace.toModule.{0, u_1} Complex E Complex.instNormedField
+                  (@NormedAddCommGroup.toSeminormedAddCommGroup.{u_1} E inst)
+                  (@InnerProductSpace.toNormedSpace.{0, u_1} Complex E Complex.instRCLike
+                    (@NormedAddCommGroup.toSeminormedAddCommGroup.{u_1} E inst) inst_1))
+                y hy))
+            (@Projectivization.mk.{0, u_1} Complex E (@Field.toDivisionRing.{0} Complex Complex.instField)
+              (@NormedAddCommGroup.toAddCommGroup.{u_1} E inst)
+              (@NormedSpace.toModule.{0, u_1} Complex E Complex.instNormedField
+                (@NormedAddCommGroup.toSeminormedAddCommGroup.{u_1} E inst)
+                (@InnerProductSpace.toNormedSpace.{0, u_1} Complex E Complex.instRCLike
+                  (@NormedAddCommGroup.toSeminormedAddCommGroup.{u_1} E inst) inst_1))
+              y' hy') →
+          @Eq.{1} Real
+            (@HDiv.hDiv.{0, 0, 0} Real Real Real
+              (@instHDiv.{0} Real (@DivInvMonoid.toDiv.{0} Real Real.instDivInvMonoid))
+              (@HPow.hPow.{0, 0, 0} Real Nat Real
+                (@instHPow.{0, 0} Real Nat (@NPow.toPow.{0} Real (@Monoid.toNPow.{0} Real Real.instMonoid)))
+                (@Norm.norm.{0} Complex Complex.instNorm
+                  (@Inner.inner.{0, u_1} Complex E
+                    (@InnerProductSpace.toInner.{0, u_1} Complex E Complex.instRCLike
+                      (@NormedAddCommGroup.toSeminormedAddCommGroup.{u_1} E inst) inst_1)
+                    x' y'))
+                (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+              (@HMul.hMul.{0, 0, 0} Real Real Real (@instHMul.{0} Real Real.instMul)
+                (@HPow.hPow.{0, 0, 0} Real Nat Real
+                  (@instHPow.{0, 0} Real Nat (@NPow.toPow.{0} Real (@Monoid.toNPow.{0} Real Real.instMonoid)))
+                  (@Norm.norm.{u_1} E (@NormedAddCommGroup.toNorm.{u_1} E inst) x')
+                  (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                (@HPow.hPow.{0, 0, 0} Real Nat Real
+                  (@instHPow.{0, 0} Real Nat (@NPow.toPow.{0} Real (@Monoid.toNPow.{0} Real Real.instMonoid)))
+                  (@Norm.norm.{u_1} E (@NormedAddCommGroup.toNorm.{u_1} E inst) y')
+                  (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))))
+            (@HDiv.hDiv.{0, 0, 0} Real Real Real
+              (@instHDiv.{0} Real (@DivInvMonoid.toDiv.{0} Real Real.instDivInvMonoid))
+              (@HPow.hPow.{0, 0, 0} Real Nat Real
+                (@instHPow.{0, 0} Real Nat (@NPow.toPow.{0} Real (@Monoid.toNPow.{0} Real Real.instMonoid)))
+                (@Norm.norm.{0} Complex Complex.instNorm
+                  (@Inner.inner.{0, u_1} Complex E
+                    (@InnerProductSpace.toInner.{0, u_1} Complex E Complex.instRCLike
+                      (@NormedAddCommGroup.toSeminormedAddCommGroup.{u_1} E inst) inst_1)
+                    x y))
+                (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+              (@HMul.hMul.{0, 0, 0} Real Real Real (@instHMul.{0} Real Real.instMul)
+                (@HPow.hPow.{0, 0, 0} Real Nat Real
+                  (@instHPow.{0, 0} Real Nat (@NPow.toPow.{0} Real (@Monoid.toNPow.{0} Real Real.instMonoid)))
+                  (@Norm.norm.{u_1} E (@NormedAddCommGroup.toNorm.{u_1} E inst) x)
+                  (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+                (@HPow.hPow.{0, 0, 0} Real Nat Real
+                  (@instHPow.{0, 0} Real Nat (@NPow.toPow.{0} Real (@Monoid.toNPow.{0} Real Real.instMonoid)))
+                  (@Norm.norm.{u_1} E (@NormedAddCommGroup.toNorm.{u_1} E inst) y)
+                  (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))))),
+  Or
+    (@Exists.{u_1 + 1}
+      (@LinearIsometryEquiv.{0, 0, u_1, u_1} Complex Complex Complex.instSemiring Complex.instSemiring
+        (@RingHom.id.{0} Complex (@Semiring.toNonAssocSemiring.{0} Complex Complex.instSemiring))
+        (@RingHom.id.{0} Complex (@Semiring.toNonAssocSemiring.{0} Complex Complex.instSemiring))
+        (@RingHomInvPair.ids.{0} Complex Complex.instSemiring) (@RingHomInvPair.ids.{0} Complex Complex.instSemiring) E
+        E (@NormedAddCommGroup.toSeminormedAddCommGroup.{u_1} E inst)
+        (@NormedAddCommGroup.toSeminormedAddCommGroup.{u_1} E inst)
+        (@NormedSpace.toModule.{0, u_1} Complex E Complex.instNormedField
+          (@NormedAddCommGroup.toSeminormedAddCommGroup.{u_1} E inst)
+          (@InnerProductSpace.toNormedSpace.{0, u_1} Complex E Complex.instRCLike
+            (@NormedAddCommGroup.toSeminormedAddCommGroup.{u_1} E inst) inst_1))
+        (@NormedSpace.toModule.{0, u_1} Complex E Complex.instNormedField
+          (@NormedAddCommGroup.toSeminormedAddCommGroup.{u_1} E inst)
+          (@InnerProductSpace.toNormedSpace.{0, u_1} Complex E Complex.instRCLike
+            (@NormedAddCommGroup.toSeminormedAddCommGroup.{u_1} E inst) inst_1)))
+      fun
+        (U :
+          @LinearIsometryEquiv.{0, 0, u_1, u_1} Complex Complex Complex.instSemiring Complex.instSemiring
+            (@RingHom.id.{0} Complex (@Semiring.toNonAssocSemiring.{0} Complex Complex.instSemiring))
+            (@RingHom.id.{0} Complex (@Semiring.toNonAssocSemiring.{0} Complex Complex.instSemiring))
+            (@RingHomInvPair.ids.{0} Complex Complex.instSemiring)
+            (@RingHomInvPair.ids.{0} Complex Complex.instSemiring) E E
+            (@NormedAddCommGroup.toSeminormedAddCommGroup.{u_1} E inst)
+            (@NormedAddCommGroup.toSeminormedAddCommGroup.{u_1} E inst)
+            (@NormedSpace.toModule.{0, u_1} Complex E Complex.instNormedField
+              (@NormedAddCommGroup.toSeminormedAddCommGroup.{u_1} E inst)
+              (@InnerProductSpace.toNormedSpace.{0, u_1} Complex E Complex.instRCLike
+                (@NormedAddCommGroup.toSeminormedAddCommGroup.{u_1} E inst) inst_1))
+            (@NormedSpace.toModule.{0, u_1} Complex E Complex.instNormedField
+              (@NormedAddCommGroup.toSeminormedAddCommGroup.{u_1} E inst)
+              (@InnerProductSpace.toNormedSpace.{0, u_1} Complex E Complex.instRCLike
+                (@NormedAddCommGroup.toSeminormedAddCommGroup.{u_1} E inst) inst_1))) =>
+      @Eq.{u_1 + 1}
+        (@Projectivization.{0, u_1} Complex E (@Field.toDivisionRing.{0} Complex Complex.instField)
+            (@NormedAddCommGroup.toAddCommGroup.{u_1} E inst)
+            (@NormedSpace.toModule.{0, u_1} Complex E Complex.instNormedField
+              (@NormedAddCommGroup.toSeminormedAddCommGroup.{u_1} E inst)
+              (@InnerProductSpace.toNormedSpace.{0, u_1} Complex E Complex.instRCLike
+                (@NormedAddCommGroup.toSeminormedAddCommGroup.{u_1} E inst) inst_1)) →
+          @Projectivization.{0, u_1} Complex E (@Field.toDivisionRing.{0} Complex Complex.instField)
+            (@NormedAddCommGroup.toAddCommGroup.{u_1} E inst)
+            (@NormedSpace.toModule.{0, u_1} Complex E Complex.instNormedField
+              (@NormedAddCommGroup.toSeminormedAddCommGroup.{u_1} E inst)
+              (@InnerProductSpace.toNormedSpace.{0, u_1} Complex E Complex.instRCLike
+                (@NormedAddCommGroup.toSeminormedAddCommGroup.{u_1} E inst) inst_1)))
+        f
+        (@Projectivization.map.{0, u_1, 0, u_1} Complex E (@Field.toDivisionRing.{0} Complex Complex.instField)
+          (@NormedAddCommGroup.toAddCommGroup.{u_1} E inst)
+          (@NormedSpace.toModule.{0, u_1} Complex E Complex.instNormedField
+            (@NormedAddCommGroup.toSeminormedAddCommGroup.{u_1} E inst)
+            (@InnerProductSpace.toNormedSpace.{0, u_1} Complex E Complex.instRCLike
+              (@NormedAddCommGroup.toSeminormedAddCommGroup.{u_1} E inst) inst_1))
+          Complex E (@Field.toDivisionRing.{0} Complex Complex.instField)
+          (@NormedAddCommGroup.toAddCommGroup.{u_1} E inst)
+          (@NormedSpace.toModule.{0, u_1} Complex E Complex.instNormedField
+            (@NormedAddCommGroup.toSeminormedAddCommGroup.{u_1} E inst)
+            (@InnerProductSpace.toNormedSpace.{0, u_1} Complex E Complex.instRCLike
+              (@NormedAddCommGroup.toSeminormedAddCommGroup.{u_1} E inst) inst_1))
+          (@RingHom.id.{0} Complex (@Semiring.toNonAssocSemiring.{0} Complex Complex.instSemiring))
+          (@LinearEquiv.toLinearMap.{0, 0, u_1, u_1} Complex Complex Complex.instSemiring Complex.instSemiring
+            (@RingHom.id.{0} Complex (@Semiring.toNonAssocSemiring.{0} Complex Complex.instSemiring))
+            (@RingHom.id.{0} Complex (@Semiring.toNonAssocSemiring.{0} Complex Complex.instSemiring))
+            (@RingHomInvPair.ids.{0} Complex Complex.instSemiring)
+            (@RingHomInvPair.ids.{0} Complex Complex.instSemiring) E E
+            (@AddCommGroup.toAddCommMonoid.{u_1} E
+              (@SeminormedAddCommGroup.toAddCommGroup.{u_1} E
+                (@NormedAddCommGroup.toSeminormedAddCommGroup.{u_1} E inst)))
+            (@AddCommGroup.toAddCommMonoid.{u_1} E
+              (@SeminormedAddCommGroup.toAddCommGroup.{u_1} E
+                (@NormedAddCommGroup.toSeminormedAddCommGroup.{u_1} E inst)))
+            (@NormedSpace.toModule.{0, u_1} Complex E Complex.instNormedField
+              (@NormedAddCommGroup.toSeminormedAddCommGroup.{u_1} E inst)
+              (@InnerProductSpace.toNormedSpace.{0, u_1} Complex E Complex.instRCLike
+                (@NormedAddCommGroup.toSeminormedAddCommGroup.{u_1} E inst) inst_1))
+            (@NormedSpace.toModule.{0, u_1} Complex E Complex.instNormedField
+              (@NormedAddCommGroup.toSeminormedAddCommGroup.{u_1} E inst)
+              (@InnerProductSpace.toNormedSpace.{0, u_1} Complex E Complex.instRCLike
+                (@NormedAddCommGroup.toSeminormedAddCommGroup.{u_1} E inst) inst_1))
+            (@LinearIsometryEquiv.toLinearEquiv.{0, 0, u_1, u_1} Complex Complex Complex.instSemiring
+              Complex.instSemiring
+              (@RingHom.id.{0} Complex (@Semiring.toNonAssocSemiring.{0} Complex Complex.instSemiring))
+              (@RingHom.id.{0} Complex (@Semiring.toNonAssocSemiring.{0} Complex Complex.instSemiring))
+              (@RingHomInvPair.ids.{0} Complex Complex.instSemiring)
+              (@RingHomInvPair.ids.{0} Complex Complex.instSemiring) E E
+              (@NormedAddCommGroup.toSeminormedAddCommGroup.{u_1} E inst)
+              (@NormedAddCommGroup.toSeminormedAddCommGroup.{u_1} E inst)
+              (@NormedSpace.toModule.{0, u_1} Complex E Complex.instNormedField
+                (@NormedAddCommGroup.toSeminormedAddCommGroup.{u_1} E inst)
+                (@InnerProductSpace.toNormedSpace.{0, u_1} Complex E Complex.instRCLike
+                  (@NormedAddCommGroup.toSeminormedAddCommGroup.{u_1} E inst) inst_1))
+              (@NormedSpace.toModule.{0, u_1} Complex E Complex.instNormedField
+                (@NormedAddCommGroup.toSeminormedAddCommGroup.{u_1} E inst)
+                (@InnerProductSpace.toNormedSpace.{0, u_1} Complex E Complex.instRCLike
+                  (@NormedAddCommGroup.toSeminormedAddCommGroup.{u_1} E inst) inst_1))
+              U))
+          (@LinearIsometryEquiv.injective.{0, 0, u_1, u_1} Complex Complex E E Complex.instSemiring Complex.instSemiring
+            (@RingHom.id.{0} Complex (@Semiring.toNonAssocSemiring.{0} Complex Complex.instSemiring))
+            (@RingHom.id.{0} Complex (@Semiring.toNonAssocSemiring.{0} Complex Complex.instSemiring))
+            (@RingHomInvPair.ids.{0} Complex Complex.instSemiring)
+            (@RingHomInvPair.ids.{0} Complex Complex.instSemiring)
+            (@NormedAddCommGroup.toSeminormedAddCommGroup.{u_1} E inst)
+            (@NormedAddCommGroup.toSeminormedAddCommGroup.{u_1} E inst)
+            (@NormedSpace.toModule.{0, u_1} Complex E Complex.instNormedField
+              (@NormedAddCommGroup.toSeminormedAddCommGroup.{u_1} E inst)
+              (@InnerProductSpace.toNormedSpace.{0, u_1} Complex E Complex.instRCLike
+                (@NormedAddCommGroup.toSeminormedAddCommGroup.{u_1} E inst) inst_1))
+            (@NormedSpace.toModule.{0, u_1} Complex E Complex.instNormedField
+              (@NormedAddCommGroup.toSeminormedAddCommGroup.{u_1} E inst)
+              (@InnerProductSpace.toNormedSpace.{0, u_1} Complex E Complex.instRCLike
+                (@NormedAddCommGroup.toSeminormedAddCommGroup.{u_1} E inst) inst_1))
+            U)))
+    (@Exists.{u_1 + 1}
+      (@LinearIsometryEquiv.{0, 0, u_1, u_1} Complex Complex Complex.instSemiring Complex.instSemiring
+        (@starRingEnd.{0} Complex Complex.instCommSemiring Complex.instStarRing)
+        (@starRingEnd.{0} Complex Complex.instCommSemiring Complex.instStarRing)
+        (@RingHomInvPair.instStarRingEnd.{0} Complex Complex.instCommSemiring Complex.instStarRing)
+        (@RingHomInvPair.instStarRingEnd.{0} Complex Complex.instCommSemiring Complex.instStarRing) E E
+        (@NormedAddCommGroup.toSeminormedAddCommGroup.{u_1} E inst)
+        (@NormedAddCommGroup.toSeminormedAddCommGroup.{u_1} E inst)
+        (@NormedSpace.toModule.{0, u_1} Complex E Complex.instNormedField
+          (@NormedAddCommGroup.toSeminormedAddCommGroup.{u_1} E inst)
+          (@InnerProductSpace.toNormedSpace.{0, u_1} Complex E Complex.instRCLike
+            (@NormedAddCommGroup.toSeminormedAddCommGroup.{u_1} E inst) inst_1))
+        (@NormedSpace.toModule.{0, u_1} Complex E Complex.instNormedField
+          (@NormedAddCommGroup.toSeminormedAddCommGroup.{u_1} E inst)
+          (@InnerProductSpace.toNormedSpace.{0, u_1} Complex E Complex.instRCLike
+            (@NormedAddCommGroup.toSeminormedAddCommGroup.{u_1} E inst) inst_1)))
+      fun
+        (A :
+          @LinearIsometryEquiv.{0, 0, u_1, u_1} Complex Complex Complex.instSemiring Complex.instSemiring
+            (@starRingEnd.{0} Complex Complex.instCommSemiring Complex.instStarRing)
+            (@starRingEnd.{0} Complex Complex.instCommSemiring Complex.instStarRing)
+            (@RingHomInvPair.instStarRingEnd.{0} Complex Complex.instCommSemiring Complex.instStarRing)
+            (@RingHomInvPair.instStarRingEnd.{0} Complex Complex.instCommSemiring Complex.instStarRing) E E
+            (@NormedAddCommGroup.toSeminormedAddCommGroup.{u_1} E inst)
+            (@NormedAddCommGroup.toSeminormedAddCommGroup.{u_1} E inst)
+            (@NormedSpace.toModule.{0, u_1} Complex E Complex.instNormedField
+              (@NormedAddCommGroup.toSeminormedAddCommGroup.{u_1} E inst)
+              (@InnerProductSpace.toNormedSpace.{0, u_1} Complex E Complex.instRCLike
+                (@NormedAddCommGroup.toSeminormedAddCommGroup.{u_1} E inst) inst_1))
+            (@NormedSpace.toModule.{0, u_1} Complex E Complex.instNormedField
+              (@NormedAddCommGroup.toSeminormedAddCommGroup.{u_1} E inst)
+              (@InnerProductSpace.toNormedSpace.{0, u_1} Complex E Complex.instRCLike
+                (@NormedAddCommGroup.toSeminormedAddCommGroup.{u_1} E inst) inst_1))) =>
+      @Eq.{u_1 + 1}
+        (@Projectivization.{0, u_1} Complex E (@Field.toDivisionRing.{0} Complex Complex.instField)
+            (@NormedAddCommGroup.toAddCommGroup.{u_1} E inst)
+            (@NormedSpace.toModule.{0, u_1} Complex E Complex.instNormedField
+              (@NormedAddCommGroup.toSeminormedAddCommGroup.{u_1} E inst)
+              (@InnerProductSpace.toNormedSpace.{0, u_1} Complex E Complex.instRCLike
+                (@NormedAddCommGroup.toSeminormedAddCommGroup.{u_1} E inst) inst_1)) →
+          @Projectivization.{0, u_1} Complex E (@Field.toDivisionRing.{0} Complex Complex.instField)
+            (@NormedAddCommGroup.toAddCommGroup.{u_1} E inst)
+            (@NormedSpace.toModule.{0, u_1} Complex E Complex.instNormedField
+              (@NormedAddCommGroup.toSeminormedAddCommGroup.{u_1} E inst)
+              (@InnerProductSpace.toNormedSpace.{0, u_1} Complex E Complex.instRCLike
+                (@NormedAddCommGroup.toSeminormedAddCommGroup.{u_1} E inst) inst_1)))
+        f
+        (@Projectivization.map.{0, u_1, 0, u_1} Complex E (@Field.toDivisionRing.{0} Complex Complex.instField)
+          (@NormedAddCommGroup.toAddCommGroup.{u_1} E inst)
+          (@NormedSpace.toModule.{0, u_1} Complex E Complex.instNormedField
+            (@NormedAddCommGroup.toSeminormedAddCommGroup.{u_1} E inst)
+            (@InnerProductSpace.toNormedSpace.{0, u_1} Complex E Complex.instRCLike
+              (@NormedAddCommGroup.toSeminormedAddCommGroup.{u_1} E inst) inst_1))
+          Complex E (@Field.toDivisionRing.{0} Complex Complex.instField)
+          (@NormedAddCommGroup.toAddCommGroup.{u_1} E inst)
+          (@NormedSpace.toModule.{0, u_1} Complex E Complex.instNormedField
+            (@NormedAddCommGroup.toSeminormedAddCommGroup.{u_1} E inst)
+            (@InnerProductSpace.toNormedSpace.{0, u_1} Complex E Complex.instRCLike
+              (@NormedAddCommGroup.toSeminormedAddCommGroup.{u_1} E inst) inst_1))
+          (@starRingEnd.{0} Complex Complex.instCommSemiring Complex.instStarRing)
+          (@LinearEquiv.toLinearMap.{0, 0, u_1, u_1} Complex Complex Complex.instSemiring Complex.instSemiring
+            (@starRingEnd.{0} Complex Complex.instCommSemiring Complex.instStarRing)
+            (@starRingEnd.{0} Complex Complex.instCommSemiring Complex.instStarRing)
+            (@RingHomInvPair.instStarRingEnd.{0} Complex Complex.instCommSemiring Complex.instStarRing)
+            (@RingHomInvPair.instStarRingEnd.{0} Complex Complex.instCommSemiring Complex.instStarRing) E E
+            (@AddCommGroup.toAddCommMonoid.{u_1} E
+              (@SeminormedAddCommGroup.toAddCommGroup.{u_1} E
+                (@NormedAddCommGroup.toSeminormedAddCommGroup.{u_1} E inst)))
+            (@AddCommGroup.toAddCommMonoid.{u_1} E
+              (@SeminormedAddCommGroup.toAddCommGroup.{u_1} E
+                (@NormedAddCommGroup.toSeminormedAddCommGroup.{u_1} E inst)))
+            (@NormedSpace.toModule.{0, u_1} Complex E Complex.instNormedField
+              (@NormedAddCommGroup.toSeminormedAddCommGroup.{u_1} E inst)
+              (@InnerProductSpace.toNormedSpace.{0, u_1} Complex E Complex.instRCLike
+                (@NormedAddCommGroup.toSeminormedAddCommGroup.{u_1} E inst) inst_1))
+            (@NormedSpace.toModule.{0, u_1} Complex E Complex.instNormedField
+              (@NormedAddCommGroup.toSeminormedAddCommGroup.{u_1} E inst)
+              (@InnerProductSpace.toNormedSpace.{0, u_1} Complex E Complex.instRCLike
+                (@NormedAddCommGroup.toSeminormedAddCommGroup.{u_1} E inst) inst_1))
+            (@LinearIsometryEquiv.toLinearEquiv.{0, 0, u_1, u_1} Complex Complex Complex.instSemiring
+              Complex.instSemiring (@starRingEnd.{0} Complex Complex.instCommSemiring Complex.instStarRing)
+              (@starRingEnd.{0} Complex Complex.instCommSemiring Complex.instStarRing)
+              (@RingHomInvPair.instStarRingEnd.{0} Complex Complex.instCommSemiring Complex.instStarRing)
+              (@RingHomInvPair.instStarRingEnd.{0} Complex Complex.instCommSemiring Complex.instStarRing) E E
+              (@NormedAddCommGroup.toSeminormedAddCommGroup.{u_1} E inst)
+              (@NormedAddCommGroup.toSeminormedAddCommGroup.{u_1} E inst)
+              (@NormedSpace.toModule.{0, u_1} Complex E Complex.instNormedField
+                (@NormedAddCommGroup.toSeminormedAddCommGroup.{u_1} E inst)
+                (@InnerProductSpace.toNormedSpace.{0, u_1} Complex E Complex.instRCLike
+                  (@NormedAddCommGroup.toSeminormedAddCommGroup.{u_1} E inst) inst_1))
+              (@NormedSpace.toModule.{0, u_1} Complex E Complex.instNormedField
+                (@NormedAddCommGroup.toSeminormedAddCommGroup.{u_1} E inst)
+                (@InnerProductSpace.toNormedSpace.{0, u_1} Complex E Complex.instRCLike
+                  (@NormedAddCommGroup.toSeminormedAddCommGroup.{u_1} E inst) inst_1))
+              A))
+          (@LinearIsometryEquiv.injective.{0, 0, u_1, u_1} Complex Complex E E Complex.instSemiring Complex.instSemiring
+            (@starRingEnd.{0} Complex Complex.instCommSemiring Complex.instStarRing)
+            (@starRingEnd.{0} Complex Complex.instCommSemiring Complex.instStarRing)
+            (@RingHomInvPair.instStarRingEnd.{0} Complex Complex.instCommSemiring Complex.instStarRing)
+            (@RingHomInvPair.instStarRingEnd.{0} Complex Complex.instCommSemiring Complex.instStarRing)
+            (@NormedAddCommGroup.toSeminormedAddCommGroup.{u_1} E inst)
+            (@NormedAddCommGroup.toSeminormedAddCommGroup.{u_1} E inst)
+            (@NormedSpace.toModule.{0, u_1} Complex E Complex.instNormedField
+              (@NormedAddCommGroup.toSeminormedAddCommGroup.{u_1} E inst)
+              (@InnerProductSpace.toNormedSpace.{0, u_1} Complex E Complex.instRCLike
+                (@NormedAddCommGroup.toSeminormedAddCommGroup.{u_1} E inst) inst_1))
+            (@NormedSpace.toModule.{0, u_1} Complex E Complex.instNormedField
+              (@NormedAddCommGroup.toSeminormedAddCommGroup.{u_1} E inst)
+              (@InnerProductSpace.toNormedSpace.{0, u_1} Complex E Complex.instRCLike
+                (@NormedAddCommGroup.toSeminormedAddCommGroup.{u_1} E inst) inst_1))
+            A))) : Prop

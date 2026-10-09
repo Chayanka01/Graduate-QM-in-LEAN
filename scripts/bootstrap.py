@@ -5,6 +5,7 @@ import hashlib
 import json
 import os
 import platform
+import re
 import subprocess
 import tarfile
 import urllib.request
@@ -53,8 +54,13 @@ def main():
     # Committed manifests are restored by Lake; update only creates a missing one.
     if not (ROOT / 'lake-manifest.json').exists():
         run(str(ROOT / 'scripts/lake'), 'update')
-    run(str(ROOT / 'scripts/lake'), 'exe', 'cache', 'get',
-        'Mathlib.Analysis.InnerProductSpace.Basic')
+    sources = [ROOT / 'GraduateQM.lean', *sorted((ROOT / 'GraduateQM').rglob('*.lean'))]
+    mathlib_imports = sorted({module for source in sources for module in
+        re.findall(r'^(?:public\s+)?import\s+(Mathlib[\w.]*)\s*$',
+                   source.read_text(), flags=re.MULTILINE)})
+    if not mathlib_imports:
+        raise SystemExit('No project Mathlib imports found; refusing an incomplete cache setup.')
+    run(str(ROOT / 'scripts/lake'), 'exe', 'cache', 'get', *mathlib_imports)
     run(str(ROOT / 'scripts/check'))
 
 if __name__ == '__main__':

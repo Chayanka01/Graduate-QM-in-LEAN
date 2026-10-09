@@ -1,10 +1,21 @@
 # First project: finite-dimensional Wigner theorem
 
-Status: selected by the user on 2026-10-09; statement design and independent
-review are underway. The complete target proposition has type-elaborated in the pinned Lean
-environment and has received independent pre-approval semantic review. No
-mathematical declaration has been author-approved or frozen, and no Wigner
-theorem is claimed proved.
+Status: **PROVED** on 2026-10-09. The exact author-approved
+[declaration](../../GraduateQM/Wigner/Frozen/ExistsUnitaryOrAntiunitary.lean)
+is sealed; only its proof body changed. The [final independent audit](FINAL_AUDIT.md)
+passed source fidelity, binder and dependency checks, dimensions zero/one/two,
+and arbitrary sparse states. The complete theorem and its explicit consumers
+compile with only `propext`, `Classical.choice`, and `Quot.sound`. The orchestrator separately reran the integration and exact sealed-source
+checks. See [release verification](RELEASE.md) for publication and fresh-checkout
+validation, and [orchestrator verification](ORCHESTRATOR_VERIFICATION.md) for the
+additional current-checkout checks.
+
+The direct Section III proof is implemented: normalize basis images, classify
+pair circles, remove their offsets, prove one common orientation from coordinate
+products, reconstruct every ray, and undo the normalizer. A genuine coordinate
+conjugation antiunitary supplies the second branch. The witness and branch are
+chosen before every state. Earlier helper and step audits are historical
+milestones; their then-open obligations are discharged in the final assembly.
 
 ## Physical question
 
@@ -79,8 +90,12 @@ README is not evidence that its result has our intended meaning.
    its action on every ray.
 6. Explain the remaining phase ambiguity with correct dimensional hypotheses.
 
-This is a pedagogical outline, not an extracted or approved proof dependency
-graph. Exact decomposition follows declaration approval and source review.
+This is a pedagogical outline. The separately reviewed source decomposition
+is in [the dependency graph](DEPGRAPH.md), with its coverage inventory and
+[review record](GRAPH_REVIEW.md). It remains a source-topology snapshot with
+initial Lean planning fields. Its six source-gap markers identify omissions in
+the written source; the implementation expands these arguments, and the final
+audit verifies their consumption. Those labels are not the live proof status.
 
 ## Definition and theorem review
 
@@ -101,11 +116,16 @@ derive the Schrödinger equation, prove time reversal is always antiunitary,
 or address mixed-state channels or infinite-dimensional operator domains.
 Those are possible later chapters, with their own additional assumptions.
 
-## Immediate deliverables
+## Completed proof artifacts
 
-- Pinned sources and a physics statement with every assumption exposed.
-- Local Mathlib API inventory and an independently challenged proof route.
-- Exact Lean declaration review material, with elaboration evidence clearly
-  distinguished from theorem proof.
-- After author approval: frozen statements, enforced draft quarantine, and a
-  source-grounded proof graph before a multi-agent proof campaign.
+- [Source provenance](source-lock.json), [approval](APPROVAL.md), and the exact
+  frozen declaration with an unchanged elaborated type.
+- Independently reviewed source graph and historical milestone audits.
+- [Provider assembly](../../GraduateQM/Wigner/Provider.lean) consuming all
+  constructed premises, with no custom axiom or remaining placeholder.
+- [Final audit](FINAL_AUDIT.md) and [milestone ledger](../progress.json).
+- `./scripts/check` builds the public sealed export and audits its exact axioms.
+
+The pedagogical chapter outline above and extensions beyond this existence
+statement are separate future work. The formalization is of a known theorem;
+no new physics theorem or empirical result is claimed.
