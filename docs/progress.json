@@ -1,10 +1,10 @@
 {
-  "phase": "infrastructure",
-  "first_physics_problem": null,
+  "phase": "wigner_statement_design",
+  "first_physics_problem": "Finite-dimensional Wigner theorem",
   "research_results": [],
   "approved_anchors": [],
   "draft_anchors": [],
-  "status": "infrastructure_verified",
+  "status": "exact_target_review_prepared",
   "verification": {
     "date": "2026-10-09",
     "lean_build": "passed",
@@ -19,5 +19,14 @@
     "lead_runtime_worker_ceiling": 20,
     "twenty_worker_load_test": "not performed",
     "scope": "infrastructure only; no QM theorem attempted"
-  }
+  },
+  "wigner_intake": {
+    "main_statement": "classical bijective ray symmetry, arbitrary finite complex dimension",
+    "target_type_elaboration": "passed; independently repeated by orchestrator",
+    "preapproval_semantic_review": "no excess assumptions or weakened conclusion reported",
+    "theorem_proof": "not attempted",
+    "author_approval": "pending exact declaration review",
+    "frozen_anchors": 0
+  },
+  "publication_status": "local_changes_only; post-bootstrap publication requires explicit authorization"
 }

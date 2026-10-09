@@ -1,8 +1,9 @@
 # Graduate QM in Lean
 
 An experimental graduate quantum mechanics learning project with AI-assisted,
-kernel-checked Lean proofs. The current milestone is **infrastructure only**;
-no QM theorem or physical model has been formalized yet.
+kernel-checked Lean proofs. The infrastructure is verified. The first selected project is **Wigner's theorem
+in finite-dimensional quantum mechanics**, currently at source and statement
+review. No Wigner theorem is claimed proved.
 
 ## Local setup
 
@@ -42,8 +43,10 @@ on the next turn/new chat. Agent roles and defaults are in `.codex/`. Existing
 sessions may retain their old limits. The desktop's effective runtime settings
 always take precedence over a requested ceiling.
 
-The next milestone is choosing one simple QM problem with the user. Read
-[the workflow](docs/WORKFLOW.md) and [agent rules](AGENTS.md) before doing so.
+The active milestone is preparing the exact Wigner theorem statement and its
+independent semantic review. Read [the project scope](docs/wigner/PROJECT.md),
+[the sources](docs/wigner/SOURCES.md), [the workflow](docs/WORKFLOW.md), and
+[agent rules](AGENTS.md).
 The pinned skill workflow requires independent statement review and explicit
 approval of exact source-facing declarations before proof campaigns begin.
 

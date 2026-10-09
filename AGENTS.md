@@ -3,9 +3,14 @@
 ## Purpose and current scope
 
 This is an experimental learning and formalization project supporting a physics
-PhD. The immediate milestone is infrastructure only. Do not select or start a
-QM theorem until the user releases the first problem through the orchestrator.
-An infrastructure smoke test is not a mathematical research result.
+PhD. The user selected finite-dimensional Wigner's theorem as the first major project
+on 2026-10-09. The active milestone is source selection, exact statement design,
+and independent semantic review before author approval and proof campaigning.
+Build reusable foundations for rays, transition probabilities, complex linear
+and conjugate-linear maps, and unitary/antiunitary operators. Derive Wigner's
+conclusion from ray-level assumptions; do not import Wigner's theorem as a black
+box. Standard mathematical library results may be reused with their role made
+explicit. An infrastructure smoke test is not a mathematical research result.
 
 ## People and agent roles
 

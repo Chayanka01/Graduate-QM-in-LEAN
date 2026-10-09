@@ -51,8 +51,9 @@ only through his registered, quarantined workflow and is never proof progress.
 ## State and communication
 
 `docs/progress.json` is the small public milestone ledger. `.state/` stores local
-chat links, verification logs, and transient packets. The initial lead performs
-infrastructure validation only and waits for the first user-selected problem.
+chat links, verification logs, and transient packets. The active first problem is finite-dimensional Wigner's theorem. The lead is
+preparing source selection, exact declarations, and independent review before
+the author-approval and proof-campaign stages.
 Both orchestrator and lead may send coordination messages within this authorized
 workflow. No recurring background job is configured.
 
